@@ -1,14 +1,30 @@
-/*Menu*/
-header{
-    display: none;
+:root{
+    --primary-color: #1e293b;
 }
 
 
+/*Menu*/
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    color: #fff;
+}
+header ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+header ul a{
+    color: #fff;
+    text-decoration: none;
+}
 
 
 /*Carrosel*/
 .container-slider{
-    padding: 2rem;
+    background-color: #000;
 }
 .slider-wrapper{
     position: relative;
@@ -44,4 +60,12 @@ header{
 }
 .slider-navigation a:hover{
     opacity: 1;
+}
+
+main{
+    max-width: 1500px;
+    margin-inline: auto;
+}
+.title-container{
+    text-transform: uppercase;
 }
