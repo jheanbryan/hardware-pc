@@ -1,0 +1,47 @@
+/*Menu*/
+header{
+    display: none;
+}
+
+
+
+
+/*Carrosel*/
+.container-slider{
+    padding: 2rem;
+}
+.slider-wrapper{
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto
+}
+.slider{
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: #000;
+}
+.slider img{
+    flex: 1 0 100%;
+    object-fit: contain;
+}
+.slider-navigation{
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 1.25rem;
+    z-index: 1;
+    width: 100%;
+    justify-content: center;
+}
+.slider-navigation a{
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.75;
+}
+.slider-navigation a:hover{
+    opacity: 1;
+}
