@@ -78,6 +78,7 @@ main{
 .container-products{
     display: flex;
     margin-top: 15px;
+    gap: 20px;
 }
 .card-product{
     max-width: 250px;
@@ -86,6 +87,10 @@ main{
     box-shadow: 2px 2px 5px #000;
     padding: 15px;
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
 }
 .div-img{
     padding: 5px;

@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
+const cors = require('cors');
 const api = express();
 require('dotenv').config()
 
@@ -19,6 +21,14 @@ mongoose.connection.on('error', (erro) => {
     console.log('Erro ao conectar no BD! ', erro);
 });
 
+api.use(cors({
+    origin: '*',
+    methods: ['GET'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
+
+// Serve arquivos estáticos (como imagens) da pasta 'public'
+api.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 api.listen(API_PORT, () => console.log('API Online!'));
 

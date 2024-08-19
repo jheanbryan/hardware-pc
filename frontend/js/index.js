@@ -10,6 +10,7 @@ class Product {
             }
     }
 }
+const host = 'http://localhost:3000';
 
 export const req = async () => {
     const API_URL = 'http://localhost:3000/products';
@@ -25,7 +26,7 @@ export const req = async () => {
         newProduct.description = product.description;
         newProduct.img = {
             nameImg: product.img.nameImg,
-            srcImg: product.img.srcImg
+            srcImg: host + product.img.srcImg
         }
 
         allProducts.push(newProduct)

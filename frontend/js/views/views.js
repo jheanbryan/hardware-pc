@@ -1,6 +1,6 @@
 import { req } from "../index.js";
 
-const card = (product) => {
+const card = (product, elementHtml) => {
     const divCard =`
             <div class="card-product">
                 <div class="div-img">
@@ -26,11 +26,17 @@ const card = (product) => {
                 </div>
             </div>
     `;
+
+    elementHtml.insertAdjacentHTML('beforeend', divCard)
 };
 
 const writeProductsInHtml = async () => {
+    const containerCards = document.querySelector('.container-products');
     const products = await req();
-    console.log(products)
+    for (let i = 0; i < products.length; i++) {
+        card(products[i], containerCards)
+    }
+
 };
 
 writeProductsInHtml();
