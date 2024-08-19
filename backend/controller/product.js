@@ -1,4 +1,7 @@
-const Products = require('../model/schema.js')
+const Products = require('../schema/ProductSchema.js')
+const multer = require('multer');
+
+const upload = multer({ storage: multer.memoryStorage() });
 
 function returnErrorMessage(res, messageError, error= '') {
     if(error == '')
@@ -21,9 +24,10 @@ exports.listProducts = async (req, res) => {
         returnErrorMessage(res, 'Erro ao listar produtos!', error);
     }
 };
-
+/*
 exports.addProducts = async (req, res) => {
-    const newProduct = req.query;
+    
+    const newProduct = req.body;
 
     if (!newProduct.name) {
         return returnErrorMessage(res, 'Informe o nome do produto!');
@@ -38,9 +42,28 @@ exports.addProducts = async (req, res) => {
         returnErrorMessage(res, 'Problemas ao cadastrar!', error);
     }
 };
+*/
+
+exports.addProducts = async (req, res) => {
+    const { name, value, description } = req.body;
+    const imgURL = req.file ? `/uploads/${req.file.filename}` : null;
+
+    if (!name)
+        return returnErrorMessage(res, 'Informe o nome do produto!');
+
+    try {
+        const newProduct = { name, value, description, img: {nameImg: name, srcImg: imgURL} };
+        await Products.create(newProduct);
+        returnMessage(res, 'Produto adicionado!')
+        
+    } catch (error) {
+        console.log(error);
+        returnErrorMessage(res, 'Problemas ao cadastrar!', error);
+    }
+};
 
 exports.editProducts = async (req, res) => {
-    const product = req.query;
+    const product = req.body;
     if (!product.name) {
         return returnErrorMessage(res, 'Informe o nome do produto a ser editado!');
     }
