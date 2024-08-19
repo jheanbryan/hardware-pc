@@ -45,14 +45,21 @@ exports.addProducts = async (req, res) => {
 */
 
 exports.addProducts = async (req, res) => {
-    const { name, value, description } = req.body;
+    const { 
+        name, 
+        title,
+        oldValue,
+        currentValue,
+        offer,
+        value, 
+        description } = req.body;
     const imgURL = req.file ? `/uploads/${req.file.filename}` : null;
 
     if (!name)
         return returnErrorMessage(res, 'Informe o nome do produto!');
 
     try {
-        const newProduct = { name, value, description, img: {nameImg: name, srcImg: imgURL} };
+        const newProduct = { name, title, oldValue, currentValue, offer, description, img: {nameImg: title, srcImg: imgURL} };
         await Products.create(newProduct);
         returnMessage(res, 'Produto adicionado!')
         

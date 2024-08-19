@@ -2,7 +2,10 @@ class Product {
     constructor() {
       this.id = '';
       this.name = '';
-      this.value = null;
+      this.title = '';
+      this.oldValue = null;
+      this.currentValue = null;
+      this.offer = false;
       this.description = '';
       this.img = {
                 nameImg: '',
@@ -22,7 +25,10 @@ export const req = async () => {
         const newProduct = new Product();
         newProduct.id = product._id;
         newProduct.name = product.name;
-        newProduct.value = product.value;
+        newProduct.title = product.title;
+        newProduct.oldValue = product.oldValue;
+        newProduct.currentValue = product.currentValue;
+        newProduct.offer = product.offer;
         newProduct.description = product.description;
         newProduct.img = {
             nameImg: product.img.nameImg,

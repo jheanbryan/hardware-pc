@@ -4,6 +4,7 @@
 
 body{
     background-color: #dcdcdc;
+
 }
 /*Menu*/
 header{
@@ -103,7 +104,12 @@ main{
     margin-top: 5px;
 }
 .product-title{
-    font-size: 1.3rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* Mostra até 3 linhas */
+    overflow: hidden;
+    text-transform: uppercase;
+    font-size: 1.1rem;
 }
 .container-value{
     margin-top: 15px;
@@ -122,10 +128,17 @@ main{
 }
 .payment-form{
     color: #808080;
-    font-size: 0.8rem
+    font-size: 0.8rem;
+    margin-top: 5px;
 }
-
-
+.about-company{
+    margin-top: 30px;
+}
+.about-company p{
+    margin: 10px;
+    letter-spacing: 0.5px;
+    line-height: 1.3rem;
+}
 
 
 

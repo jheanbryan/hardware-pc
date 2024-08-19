@@ -9,15 +9,15 @@ const card = (product, elementHtml) => {
 
                 <div class="info-product">
                     <span class="product-title">
-                        ${product.name}
+                        ${product.title}
                     </span>
 
                     <div class="container-value">
                         <span class="old-value">
-                            de ${product.value + 199}
+                            de ${product.oldValue}
                         </span>
                         <span class="new-value">
-                            por ${product.value}
+                            por ${product.currentValue}
                         </span>
                         <span class="payment-form">
                             À vista no PIX
@@ -26,7 +26,6 @@ const card = (product, elementHtml) => {
                 </div>
             </div>
     `;
-
     elementHtml.insertAdjacentHTML('beforeend', divCard)
 };
 
