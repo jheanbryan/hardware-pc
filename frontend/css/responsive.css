@@ -1,0 +1,10 @@
+@media (max-width: 850px) {
+    ul:first-child{    
+        white-space: nowrap;
+    }
+}
+@media (max-width: 450px) {
+    header ul li{
+        display: none;
+    }
+}

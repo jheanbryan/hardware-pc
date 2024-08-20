@@ -14,22 +14,32 @@
 </head>
 <body>
     <header>
-        <ul>
-            <a href="/frontend/index.html">
-                <li>Hardware PC</li>
-            </a>
-            <a href="#products">
-                <li>Produtos</li>
-            </a>
-        </ul>
-        <ul>
-            <a href="">
-                <li>Contato</li>
-            </a>
-            <a href="#about">
-                <li>Sobre</li>
-            </a>
-        </ul>
+        <div class="options">
+            <ul class="side-bar none">
+               <a href=""><li>Hardware PC</li></a> 
+               <a href=""><li>Produtos</li></a> 
+               <a href=""><li>Lançamentos</li></a> 
+               <a href=""><li>Sobre</li></a> 
+            </ul>
+
+            <ul class="logo-name">
+                <a href="/frontend/index.html">
+                    <li>Hardware PC</li>
+                </a>
+            </ul>
+        </div>
+
+
+        <div class="bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="div-search">
+            <input type="text" placeholder="Pesquise algum produto" class="input-search">
+            <img src="img/search-icon.svg" alt="icone de pesquisa" class="icon">
+        </div>
     </header>
 
     <!--Carrosel-->
