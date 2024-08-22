@@ -1,10 +1,25 @@
 @media (max-width: 850px) {
+    header{
+        gap: 10px;
+    }
     ul:first-child{    
         white-space: nowrap;
     }
 }
+
+@media (max-width: 560px) {
+    .container-products{
+        justify-content: center;
+        flex-direction: column;
+    }
+    .card-product{
+        max-width: 560px;
+        width: 100%;
+    }
+}
+
 @media (max-width: 450px) {
-    header ul li{
+    .logo-name{
         display: none;
     }
 }

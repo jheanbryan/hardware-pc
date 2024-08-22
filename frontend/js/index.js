@@ -74,7 +74,8 @@ const menu = () => {
     const sideBar = document.querySelector('.side-bar');
 
     barsMenu.addEventListener('click', () => {
-        sideBar.classList.remove('none');
+        sideBar.classList.toggle('side-in');
+        barsMenu.classList.toggle('active');
     })
 }
 

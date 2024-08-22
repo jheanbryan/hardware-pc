@@ -27,11 +27,15 @@ header{
     background-color: var(--primary-color);
     height: 100vh;
     position: fixed;
-    left: 0;
+    left: -100%;
     top: 60px;
     justify-content: center;
     max-width: 450px;
     width: 100%;
+    transition: 1s ease-in-out;
+}
+.side-bar.side-in{
+    left: 0;
 }
 .side-bar a{
     text-decoration: none;
@@ -51,6 +55,7 @@ header{
     list-style: none;
     color: #fff;
     text-decoration: none;
+    text-wrap: nowrap;
 }
 .bars {
     display: flex;
@@ -67,12 +72,18 @@ header{
     height: 3px;
     background-color: #fff;
     border-radius: 5px;
+    transform-origin: center;
+    transition: 0.5s;
 }
-.rotate-bar-top{
-    transform: rotate(45deg) translate(-50%, -50%);
+.bars.active .bar:nth-child(1){
+    transform: rotate(-45deg) translateY(5px);
 }
-.rotate-bar-bottom{
-    transform: rotate(-45deg) translate(-50%, -50%);
+.bars.active .bar:nth-child(2){
+    opacity: 0;
+    display: none;
+}
+.bars.active .bar:nth-child(3){
+    transform: rotate(45deg) translateY(-5px);    
 }
 .div-search{
     max-width: 600px;
@@ -95,6 +106,10 @@ header{
     position: absolute;
     right: 5px;
 }
+
+
+
+
 
 
 
