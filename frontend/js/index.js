@@ -71,12 +71,21 @@ const searchInput = () => {
 
 const menu = () => {
     const barsMenu = document.querySelector('.bars');
+    const menu = document.querySelector('.options');
+    const header = document.querySelector('header');
+    const body = document.querySelector('body');
+    const xMenu = document.querySelector('.btn-close-menu');
     const sideBar = document.querySelector('.side-bar');
 
-    barsMenu.addEventListener('click', () => {
-        sideBar.classList.toggle('side-in');
-        barsMenu.classList.toggle('active');
-    })
+    const toogleInElements = () => {
+        menu.classList.toggle('side-in');
+        header.classList.toggle('dark-opacity');
+        body.classList.toggle('overflow-hidden');
+    };
+
+    barsMenu.addEventListener('click', toogleInElements);
+    xMenu.addEventListener('click', toogleInElements );
+    sideBar.addEventListener('click', toogleInElements );
 }
 
 main();

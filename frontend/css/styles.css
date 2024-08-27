@@ -5,6 +5,9 @@
 body{
     background-color: #dcdcdc;
 }
+body.overflow-hidden {
+    overflow: hidden;
+}
 /*Menu*/
 header{
     display: flex;
@@ -18,23 +21,39 @@ header{
     top: 0;
     gap: 15px;
 }
-.side-bar{
+.options{
     display: flex;
-    flex-direction: column;
-    list-style: none;
-    background-color: var(--primary-color);
     height: 100vh;
     position: fixed;
     left: -100%;
-    justify-content: center;
     max-width: 450px;
     width: 100%;
     transition: 1s ease-in-out;
     top: 0;
+    z-index: 3;
 }
-.side-bar.side-in{
+
+.options.side-in{
     left: 0;
 }
+.side-bar{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+    background-color: var(--primary-color);
+}
+header.dark-opacity::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+}
+
 .side-bar a{
     text-decoration: none;
     color: #fff;
@@ -49,6 +68,29 @@ header{
     background-color: #fff;
     color: var(--primary-color);
 }
+.btn-close-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 40px;
+}
+.bar-x{
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transform-origin: center;
+}
+.bar-one{
+    transform: rotate(-45deg) translateY(2px);
+}
+.bar-two{
+    transform: rotate(45deg) translateY(-2px);    
+}
+
+
 .bars {
     display: flex;
     flex-direction: column;
@@ -72,12 +114,6 @@ header{
     justify-content: center;
     position: absolute;
     left: 0;
-}
-.bar-one{
-    transform: rotate(-45deg) translateY(5px);
-}
-.bar-two{
-    transform: rotate(45deg) translateY(-5px);    
 }
 
 /*
@@ -135,12 +171,7 @@ header .line{
 }
 
 
-
-
-
-
-
-main{
+*{
     scroll-behavior: smooth;
     scroll-margin: 100px;
 }
