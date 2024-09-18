@@ -22,4 +22,18 @@
     .logo-name{
         display: none;
     }
+    header.dark-opacity::before{
+        display: none;
+    }
+    .options{
+        top: 66px;
+        height: 100%;
+    }
+    .btn-close-menu{
+        display: none;
+    }
+    .options {
+        height: 100%;
+    }
+    .side-bar{}
 }
