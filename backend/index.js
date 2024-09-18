@@ -30,7 +30,7 @@ api.use(cors({
 // Serve arquivos estáticos (como imagens) da pasta 'public'
 api.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-api.listen(API_PORT, () => console.log('API Online!'));
+//api.listen(API_PORT, () => console.log('API Online!'));
 
 api.get('/status', (req, res) => res.send('<h3>API Online!</h3>'));
 
@@ -42,3 +42,5 @@ api.get('/products', productsController.listProducts);
 api.post('/product', upload.single('image'), productsController.addProducts);
 api.put('/product', productsController.editProducts);
 api.delete('/product', productsController.deleteProducts);
+
+module.exports = api;
