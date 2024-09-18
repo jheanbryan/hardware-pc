@@ -6,7 +6,9 @@ const api = express();
 require('dotenv').config()
 
 const URL_DB = process.env.URL_DB;
-const API_PORT = process.env.API_PORT;
+const API_PORT = process.env.API_PORT || 3000;
+
+console.log(URL_DB, API_PORT)
 
 mongoose.connect(URL_DB);
 mongoose.connection.on('connected', () => {
