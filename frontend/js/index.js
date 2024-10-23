@@ -75,22 +75,32 @@ const menu = () => {
     const body = document.querySelector('body');
     const xMenu = document.querySelector('.btn-close-menu');
     const sideBar = document.querySelector('.side-bar');
+    const bars = document.querySelectorAll('.bar');
 
     const toogleInElements = () => {
         menu.classList.toggle('side-in');
         header.classList.toggle('dark-opacity');
         body.classList.toggle('overflow-hidden');
+
+        // Adiciona ou remove a classe mobile-bar para as barras
+        bars.forEach(bar => bar.classList.toggle('mobile-bar'));
     };
 
+    // Evento de clique para abrir e fechar o menu
     barsMenu.addEventListener('click', toogleInElements);
-    xMenu.addEventListener('click', toogleInElements );
-    sideBar.addEventListener('click', toogleInElements );
+    xMenu.addEventListener('click', toogleInElements);
+    sideBar.addEventListener('click', toogleInElements);
 
-    window.addEventListener('resize', function(){
+    // Controle do comportamento no redimensionamento da janela
+    window.addEventListener('resize', function() {
         if (window.innerWidth < 450) {
-            
+            if (menu.classList.contains('side-in')) {
+                bars.forEach(bar => bar.classList.add('mobile-bar'));
+            }
+        } else {
+            bars.forEach(bar => bar.classList.remove('mobile-bar'));
         }
     });
-}
+};
 
 main();

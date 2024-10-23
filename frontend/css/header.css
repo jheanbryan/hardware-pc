@@ -91,6 +91,17 @@ header.dark-opacity::before{
     cursor: pointer;
 }
 
+.rotate-45deg.mobile-bar{
+    transform: rotate(-45deg) translateY(5px);
+}
+.invisible.mobile-bar{
+    opacity: 0;
+    display: none;
+}
+.rotate45deg.mobile-bar{
+    transform: rotate(45deg) translateY(-5px);    
+}
+
 .bar {
     width: 30px;
     height: 3px;
