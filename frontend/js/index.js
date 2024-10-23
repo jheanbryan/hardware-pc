@@ -39,7 +39,6 @@ const main = async () => {
     }
 
     searchInput();
-
 };
 
 const searchInput = () => {
@@ -86,6 +85,12 @@ const menu = () => {
     barsMenu.addEventListener('click', toogleInElements);
     xMenu.addEventListener('click', toogleInElements );
     sideBar.addEventListener('click', toogleInElements );
+
+    window.addEventListener('resize', function(){
+        if (window.innerWidth < 450) {
+            
+        }
+    });
 }
 
 main();

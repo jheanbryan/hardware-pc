@@ -1,0 +1,148 @@
+/*Menu*/
+header{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    color: #fff;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    gap: 15px;
+}
+.options{
+    display: flex;
+    height: 100svh;
+    position: fixed;
+    left: -100%;
+    max-width: 450px;
+    width: 100%;
+    transition: 1s ease-in-out;
+    top: 0;
+    z-index: 3;
+}
+
+.options.side-in{
+    left: 0;
+}
+.side-bar{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+
+}
+header.dark-opacity::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+}
+
+.side-bar a{
+    text-decoration: none;
+    color: #fff;
+    height: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.side-bar a:hover{
+    background-color: #fff;
+    color: var(--primary-color);
+}
+.btn-close-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 40px;
+}
+.bar-x{
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transform-origin: center;
+}
+.bar-one{
+    transform: rotate(-45deg) translateY(2px);
+}
+.bar-two{
+    transform: rotate(45deg) translateY(-2px);    
+}
+
+.bars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transform-origin: center;
+    transition: 0.5s;
+}
+.tbn-close-menu{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+}
+.logo-name{
+    max-width: 100px;
+}
+.logo-name img{
+    width: 100%;
+    border-radius: 100%;
+}
+header .line{
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 1000px;
+    width: 100%;
+}
+.div-search{
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.input-search{
+    width: 100%;
+    line-height: 1.5rem;
+    padding: 5px;
+    border-radius: 4px;
+    outline: 0;
+    border: 0;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.icon{
+    width: 25px;
+    cursor: pointer;
+}

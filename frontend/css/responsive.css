@@ -33,7 +33,8 @@
         display: none;
     }
     .options {
-        height: 100%;
+        height: calc(100svh - 66px);
     }
-    .side-bar{}
+    .side-bar{
+    }
 }
