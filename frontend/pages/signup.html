@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/icon/placa-grafica.png" type="image/x-icon">
 
-    <title>Entrar em sua conta</title>
+    <title>Cadastrar uma conta</title>
 
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/globals.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/signin-signup.css">
-
 
     
 </head>
@@ -67,36 +66,39 @@
 
         <div class="div-form">
             <form action="" class="form">
-                <h1>Entrar em sua conta</h1>
+                <h1>Cadastrar uma conta</h1>
+
+                <label for="name" class="label">Nome completo</label>
+                <input type="text" name="name" id="name" placeholder="Digite seu nome completo" class="input">
+
 
                 <label for="email" class="label">Email</label>
                 <input type="email" name="email" id="email" placeholder="Digite seu email" class="input">
 
                 <label for="password"  class="label">Senha</label>
-
                 <div class="input-password-container">
                     <img src="../img/icon/eye-solid.svg" alt="icone mostrar senha">
                     <input type="password" name="password" id="password" placeholder="Digite sua senha" class="input">
                 </div>
 
-                <div class="line">
-                    <div class="div-remember-me">
-                        <input type="checkbox" name="remember-me" id="remember-me" class="input">
-                        <label for="remember-me"  class="label">Lembrar-me</label>
-                    </div>
-
-                    <a href="#">
-                        <span>
-                            Esqueci minha senha
-                        </span>
-                    </a>
+                <label for="confirm-password"  class="label">Confirme sua senha</label>
+                <div class="input-password-container">
+                    <img src="../img/icon/eye-solid.svg" alt="icone mostrar senha">
+                    <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirme sua senha" class="input">
                 </div>
 
-                <input type="button" value="Entrar">
 
-                <a href="signup.html">
-                    <span>Não tem uma conta? Registre-se</span>
-                </a>
+                <div class="line">
+                    <div class="div-terms">
+                        <input type="checkbox" name="terms" id="terms" class="input">
+                        <label for="terms" class="label">
+                            Li e concordo com os <a href="/terms">Termos de Uso</a> e <a href="/privacy">Política de Privacidade</a>
+                        </label>
+                    </div>
+                </div>
+
+                <input type="button" value="Cadastrar">
+
             </form>
         </div>
     </div>
